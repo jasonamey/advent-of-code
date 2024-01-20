@@ -43,4 +43,4 @@ class Solution:
     return False
 
 s = Solution("puzzle.txt")
-print(s.check_board()) #23750
+assert s.check_board() == 23750
