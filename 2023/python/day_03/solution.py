@@ -62,8 +62,17 @@ class Solution:
         if self.is_symbol(self.board[y][x]):
           nums += self.check_point(y,x)
     nums = list(map(int, nums))
-
+  
+  def collect_gear_nums(self): 
+    ans = []
+    for y in range(len(self.board)): 
+      for x in range(len(self.board[0])):
+        if ord(self.board[y][x]) == ord("*"):
+          nums = self.check_point(y,x)
+          if len(nums) == 2:
+            ans.append(int(nums[0]) * int(nums[1]))
+    return(sum(ans))
 
 s = Solution("puzzle.txt")
-s.calculate_sums()
+print(s.collect_gear_nums())
 
